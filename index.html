@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio – Mahya Hajifatah</title>
+  <link rel="stylesheet" href="styles/portfolio.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">MH</div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer le thème">
+      🌙
+    </button>
+
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      ☰
+    </button>
+  </header>
+
+  <main>
+    <!-- ACCUEIL -->
+    <section id="accueil" class="section hero">
+      <div class="hero-text">
+        <p class="hello">Bonjour, je suis</p>
+        <h1>Mahya Hajifatah</h1>
+        <p class="subtitle">
+          Étudiante en développement web & sciences formelles, basée à Paris.
+          J’aime créer des interfaces simples, modernes et responsives.
+        </p>
+        <div class="hero-actions">
+          <a href="#projets" class="btn primary">Voir mes projets</a>
+          <a href="cv/cv-mahya-hajifatah.pdf" class="btn secondary" download>
+            Télécharger mon CV
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/profil.jpg" alt="Photo de Mahya">
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="section">
+      <h2>Projets</h2>
+      <p class="section-intro">
+        Voici une sélection de projets réalisés pendant ma formation.
+      </p>
+      <div class="projects-grid">
+        <!-- Projet 1 -->
+        <article class="project-card" data-project="1">
+          <img src="images/projet1.jpg" alt="Projet 1">
+          <div class="project-content">
+            <h3>Portfolio personnel</h3>
+            <p>Création d’un portfolio responsive en HTML, CSS et JavaScript.</p>
+            <button class="btn tertiary project-more" data-project="1">
+              Détails
+            </button>
+          </div>
+        </article>
+
+        <!-- Projet 2 -->
+        <article class="project-card" data-project="2">
+          <img src="images/projet2.jpg" alt="Projet 2">
+          <div class="project-content">
+            <h3>Mini application To-Do</h3>
+            <p>Gestion de tâches avec stockage local et interface simple.</p>
+            <button class="btn tertiary project-more" data-project="2">
+              Détails
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- MODAL PROJET -->
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Fermer la fenêtre">
+          ✕
+        </button>
+        <div id="modalBody">
+          <!-- Rempli par JavaScript -->
+        </div>
+      </div>
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="section alt">
+      <h2>Compétences</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h3>HTML5</h3>
+          <p>Structure sémantique, bonnes pratiques, accessibilité.</p>
+        </div>
+        <div class="skill">
+          <h3>CSS3</h3>
+          <p>Flexbox, Grid, transitions, animations légères, responsive.</p>
+        </div>
+        <div class="skill">
+          <h3>JavaScript</h3>
+          <p>Manipulation du DOM, événements, validation de formulaires.</p>
+        </div>
+        <div class="skill">
+          <h3>Git & GitHub</h3>
+          <p>Versionning, gestion de branches, déploiement GitHub Pages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="apropos" class="section">
+      <h2>À propos de moi</h2>
+      <div class="about-layout">
+        <div>
+          <p>
+            Je m’appelle <strong>Mahya Hajifatah</strong>, j’ai 24 ans et je suis étudiante
+            en sciences formelles et développement web à Paris.
+          </p>
+          <p>
+            Je m’intéresse particulièrement au <strong>front-end</strong> et à l’UX,
+            avec l’objectif de créer des interfaces claires, accessibles et modernes.
+          </p>
+          <p>
+            En dehors du code, j’aime apprendre, découvrir de nouveaux outils,
+            et travailler sur des projets qui ont un impact concret.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <h2>Contact</h2>
+      <p class="section-intro">
+        Un projet, une question, une opportunité&nbsp;? Envoyez-moi un message.
+      </p>
+      <div class="contact-layout">
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+            <small class="error" id="errorName"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+            <small class="error" id="errorEmail"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <small class="error" id="errorMessage"></small>
+          </div>
+
+          <button type="submit" class="btn primary">Envoyer</button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
+
+        <div class="contact-infos">
+          <h3>Réseaux</h3>
+          <ul>
+            <li><a href="https://github.com/ton-pseudo" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/ton-pseudo" target="_blank">LinkedIn</a></li>
+            <li><a href="mailto:ton.email@example.com">ton.email@example.com</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 – Mahya Hajifatah. Tous droits réservés.</p>
+    <p class="footer-links">
+      <a href="#accueil">Haut de page</a>
+    </p>
+  </footer>
+
+  <script src="scripts/portfolio.js"></script>
+</body>
+</html>
