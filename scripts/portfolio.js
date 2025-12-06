@@ -49,18 +49,19 @@ const projectsData = {
     date: "2025",
     tech: "HTML, CSS, JavaScript",
     description:
-      "Création de ce portfolio responsive pour présenter mes projets, mes compétences et permettre un contact simple.",
-    link: "https://github.com/ton-pseudo/portfolio-mahya"
+      "Création de mon portfolio personnel responsive pour présenter mes projets, mes compétences et me contacter.",
+    link: "https://github.com/mahyahf/portfolio-mahya"
   },
   2: {
     title: "Mini application To-Do",
     date: "2025",
     tech: "HTML, CSS, JavaScript (localStorage)",
     description:
-      "Application de gestion de tâches avec ajout, suppression et sauvegarde locale.",
-    link: "https://github.com/ton-pseudo/todo-app"
+      "Mini application To-Do permettant d’ajouter, gérer et supprimer des tâches. Les données sont sauvegardées dans le navigateur grâce au localStorage.",
+    link: "https://github.com/mahyahf/todo-app-mahya"
   }
 };
+
 
 function openModal(projectId) {
   const project = projectsData[projectId];
